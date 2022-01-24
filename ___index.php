@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	header("Location: main.php");
+	header("Location: ./main.php");
 	
 ?>
 <!DOCTYPE html>
