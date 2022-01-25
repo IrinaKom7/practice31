@@ -1,6 +1,5 @@
 <?php
 
-bba1f3171b1234:312f7d06
 
 if ($_SERVER['SERVER_NAME'] == "ira-kom-app.herokuapp.com/") {
 	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
