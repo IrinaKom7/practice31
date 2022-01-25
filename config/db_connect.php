@@ -4,13 +4,13 @@
 if ($_SERVER['SERVER_NAME'] == "ira-kom-app.herokuapp.com/") {
 	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 	$host = $url["host"];
-	$username = $url["user"];
+	$user = $url["user"];
 	$password = $url["pass"];
-	$dbname = substr($url["path"], 1);
+	$db_name = substr($url["path"], 1);
 } else {
 	$host = 'localhost';
-	$dbname = 'wikidb';
-	$username = 'root';
+	$db_name = 'wikidb';
+	$user = 'root';
 	$password = '';
 }
 
