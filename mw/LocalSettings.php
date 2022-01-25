@@ -52,10 +52,27 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "localhost";
-$wgDBname = "wikidb2";
-$wgDBuser = "root";
-$wgDBpassword = "";
+## $wgDBserver = "localhost";
+## $wgDBname = "wikidb";
+## $wgDBuser = "root";
+## $wgDBpassword = "";
+
+if ($_SERVER['SERVER_NAME'] == "ira-kom-app.herokuapp.com") {
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+	$wgDBserver = $url["host"];
+	$wgDBuser = $url["user"];
+	$wgDBpassword = $url["pass"];
+	$wgDBname = substr($url["path"], 1);
+} else {
+	$wgDBserver = 'localhost';
+	$wgDBname = 'wikidb';
+	$wgDBuser = 'root';
+	$wgDBpassword = '';
+}
+
+
+
+
 
 # MySQL specific settings
 $wgDBprefix = "";
