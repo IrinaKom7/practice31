@@ -39,7 +39,7 @@ require '../config/db_connect.php';
 				$_SESSION['auth'] = true;
 				
         		$_SESSION['user'] = $login;
-				header("Location: ../index.html");
+				header("Location: ../index.php");
 				#echo "Приветствую User! Для тебя открыты самые интересные статьи!";
 				#echo("Здравствуйте,   ". $_POST['LOGIN']);
 			} else {
