@@ -15,8 +15,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
-require_once "$IP/extensions/CollapsibleVector/CollapsibleVector.php";
-
 
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
@@ -173,7 +171,6 @@ wfLoadSkin( 'Vector' );
 # Add more configuration options below.
 
 wfLoadExtension( 'WikiEditor' );
-wfLoadExtension( 'CollapsibleVector' );
 
 
 # Enables use of WikiEditor by default but still allow users to disable it in preferences
