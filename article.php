@@ -32,7 +32,7 @@
 		<header class="wrapper dark">
 			<nav>
 				<ul>
-                <li><a href="main.php">Главная</a></li>
+                <li><a href="index.php">Главная</a></li>
 					<li><a href="list.php">Статьи</a></li>
 					<li><a href="list.php">Новости</a></li>
 					<li><a href="article.php">Путешествия</a></li>
