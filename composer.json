@@ -1,3 +1,7 @@
 {
 
+    "require": {
+        "ext-mbstring": "^8.0",
+        "ext-intl": "^8.0"
+    }
 }
