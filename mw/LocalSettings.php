@@ -15,6 +15,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
+require_once "$IP/extensions/CollapsibleVector/CollapsibleVector.php";
+
 
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
@@ -36,7 +38,7 @@ $wgResourceBasePath = $wgScriptPath;
 
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
-$wgLogos = [ '1x' => "$wgResourceBasePath/resources/assets/wiki.png" ];
+$wgLogos = [ '1x' => "$wgResourceBasePath/resources/assets/lg2.png" ];
 
 ## UPO means: this is also a user preference option
 
@@ -51,11 +53,11 @@ $wgEnotifWatchlist = false; # UPO
 $wgEmailAuthentication = true;
 
 ## Database settings
-$wgDBtype = "mysql";
-## $wgDBserver = "localhost";
-## $wgDBname = "wikidb";
-## $wgDBuser = "root";
-## $wgDBpassword = "";
+##  $wgDBtype = "mysql";
+##  $wgDBserver = "localhost";
+##  $wgDBname = "wikidb";
+##  $wgDBuser = "root";
+##  $wgDBpassword = "";
 
 if ($_SERVER['SERVER_NAME'] == "ira-kom-app.herokuapp.com") {
 	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
@@ -118,14 +120,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "ru";
 
-$wgSecretKey = "5f9abf1d865ed16465433792ada600eeecde62698dc9de67dc12236fd42361b5";
+$wgSecretKey = "9a5ba8e196adb4583d60af5c2a7d73d2ccba1753e6e7cc2c5eb84a304dd6cfee";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "5bc164b96cdf0b1b";
+$wgUpgradeKey = "18f7239477c87551";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -171,6 +173,9 @@ wfLoadSkin( 'Vector' );
 # Add more configuration options below.
 
 wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'CollapsibleVector' );
+
+
 # Enables use of WikiEditor by default but still allow users to disable it in preferences
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
@@ -181,14 +186,4 @@ $wgDefaultUserOptions['wikieditor-publish'] = 0;
 
 $wgStrictFileExtensions = false;
 
-# Database settings
-#$dbopts = parse_url(getenv('DATABASE_URL'));
-#$dbopts["path"] = ltrim($dbopts["path"], "/");
-$wgDBtype = "mysql";
-$wgDBserver = 'localhost';
-$wgDBname = 'wikidb';
-$wgDBuser = 'root';
-$wgDBpassword ='';
-# Postgres specific settings
-$wgDBport = '3306';
-$wgDBmwschema = "mediawiki";
+$wgShowExceptionDetails = true; 
